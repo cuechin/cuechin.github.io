@@ -740,6 +740,7 @@
     <div class="container">
       <a href="#" class="logo">andres<span class="gradient-text">mora</span></a>
       <ul class="nav-links" id="navLinks">
+        <li><a href="assets/CV_MoraAndres.pdf" download="Andres_Mora_CV.pdf">CV</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -759,6 +760,7 @@
         <p>A developer who builds modern, performant applications and loves turning ideas into real products.</p>
         <div class="btn-group">
           <a href="#projects" class="btn btn-primary">View Projects &darr;</a>
+          <a href="assets/CV_MoraAndres.pdf" class="btn btn-outline" download="Andres_Mora_CV.pdf">Download CV</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
@@ -782,7 +784,7 @@
 
         <!-- ION -->
         <div class="project-card reveal">
-          <div class="gallery-preview" onclick="openGallery()">
+          <div class="gallery-preview" onclick="openGallery('ion')">
             <img src="../ION/Android/Splash@2x.png" alt="ION Splash" loading="lazy">
             <img src="../ION/Android/Login@2x.png" alt="ION Login" loading="lazy">
             <img src="../ION/Android/Proyectos@2x.png" alt="ION Proyectos" loading="lazy">
@@ -800,43 +802,57 @@
               <span class="tag">UI/UX</span>
             </div>
             <div class="project-links">
-              <a href="#" onclick="event.preventDefault(); openGallery()">View Gallery</a>
+              <a href="#" onclick="event.preventDefault(); openGallery('ion')">View Gallery</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- BILCO -->
         <div class="project-card reveal">
-          <div class="project-thumb">&#9889;</div>
+          <div class="gallery-preview" onclick="openGallery('bilco')">
+            <img src="../BILCO/login.png" alt="BILCO Login" loading="lazy">
+            <img src="../BILCO/Menu.png" alt="BILCO Menu" loading="lazy">
+            <img src="../BILCO/Perfil.png" alt="BILCO Perfil" loading="lazy">
+            <img src="../BILCO/Nuevo%20caso.png" alt="BILCO Nuevo Caso" loading="lazy">
+            <img src="../BILCO/Casos%20abiertos.png" alt="BILCO Casos Abiertos" loading="lazy">
+            <img src="../BILCO/Fotografias.png" alt="BILCO Fotografias" loading="lazy">
+            <div class="gallery-overlay">View all 12 screenshots &rarr;</div>
+          </div>
           <div class="project-body">
-            <h3>Another Project</h3>
-            <p>Describe the key features and technologies used. Keep it concise and impactful.</p>
+            <h3>BILCO</h3>
+            <p>Mobile experience for case tracking and field workflows, including user registration, profile management, photo capture, and case detail views.</p>
             <div class="project-tags">
-              <span class="tag">Swift</span>
-              <span class="tag">AWS</span>
-              <span class="tag">Amplify</span>
+              <span class="tag">Mobile</span>
+              <span class="tag">Case Management</span>
+              <span class="tag">UI/UX</span>
             </div>
             <div class="project-links">
-              <a href="#">Live Demo</a>
-              <a href="#">Source Code</a>
+              <a href="#" onclick="event.preventDefault(); openGallery('bilco')">View Gallery</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Easy Newz -->
         <div class="project-card reveal">
-          <div class="project-thumb">&#128171;</div>
+          <div class="gallery-preview" onclick="openGallery('easyNewz')">
+            <img src="../Easy%20Newz/photo_1_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 1" loading="lazy">
+            <img src="../Easy%20Newz/photo_2_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 2" loading="lazy">
+            <img src="../Easy%20Newz/photo_3_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 3" loading="lazy">
+            <img src="../Easy%20Newz/photo_4_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 4" loading="lazy">
+            <img src="../Easy%20Newz/photo_5_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 5" loading="lazy">
+            <img src="../Easy%20Newz/photo_6_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 6" loading="lazy">
+            <div class="gallery-overlay">View all 11 screenshots &rarr;</div>
+          </div>
           <div class="project-body">
-            <h3>Yet Another Project</h3>
-            <p>Share what you learned and what makes this project unique or interesting.</p>
+            <h3>Easy Newz</h3>
+            <p>News platform for farmers on Android and iOS, enhanced with new features and Firebase integrations to improve the product experience and keep article content in sync with the mobile app.</p>
             <div class="project-tags">
-              <span class="tag">Solidity</span>
-              <span class="tag">Hardhat</span>
-              <span class="tag">Ethereum</span>
+              <span class="tag">Android</span>
+              <span class="tag">iOS</span>
+              <span class="tag">Firebase</span>
             </div>
             <div class="project-links">
-              <a href="#">Live Demo</a>
-              <a href="#">Source Code</a>
+              <a href="#" onclick="event.preventDefault(); openGallery('easyNewz')">View Gallery</a>
             </div>
           </div>
         </div>
@@ -894,13 +910,13 @@
         <h3>Get in Touch</h3>
         <p>Drop me a message or find me on socials.</p>
         <div class="social-links">
-          <a href="https://github.com/andresmora" class="social-link" title="GitHub" aria-label="GitHub">
+          <a href="https://github.com/cuechin" class="social-link" title="GitHub" aria-label="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
-          <a href="https://linkedin.com/in/andresmora" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/andresmora-/" class="social-link" title="LinkedIn" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
-          <a href="mailto:your@email.com" class="social-link" title="Email" aria-label="Email">
+          <a href="mailto:andrez.2593@gmail.com" class="social-link" title="Email" aria-label="Email">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </a>
         </div>
@@ -916,6 +932,32 @@
     </div>
     <div class="lightbox-body">
       <div class="lightbox-grid" id="ionGalleryGrid">
+        <!-- Images injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- BILCO Gallery Lightbox -->
+  <div class="lightbox" id="bilcoLightbox">
+    <div class="lightbox-header">
+      <h3>BILCO — <span class="gradient-text">Screenshots</span></h3>
+      <button class="lightbox-close" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-grid" id="bilcoGalleryGrid">
+        <!-- Images injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Easy Newz Gallery Lightbox -->
+  <div class="lightbox" id="easyNewzLightbox">
+    <div class="lightbox-header">
+      <h3>Easy Newz — <span class="gradient-text">Screenshots</span></h3>
+      <button class="lightbox-close" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-grid" id="easyNewzGalleryGrid">
         <!-- Images injected by JS -->
       </div>
     </div>
@@ -1007,55 +1049,101 @@
       });
     });
 
-    // ── ION Gallery ──
-    const ionImages = [
-      { src: "../ION/Android/Splash@2x.png", label: "Splash" },
-      { src: "../ION/Android/Login@2x.png", label: "Login" },
-      { src: "../ION/Android/Login%20Correo@2x.png", label: "Login Correo" },
-      { src: "../ION/Android/Login%20Contrase%C3%B1a@2x.png", label: "Login Contraseña" },
-      { src: "../ION/Android/Recuperar@2x.png", label: "Recuperar" },
-      { src: "../ION/Android/Recuperar%20Exito@2x.png", label: "Recuperar Éxito" },
-      { src: "../ION/Android/Proyectos@2x.png", label: "Proyectos" },
-      { src: "../ION/Android/Proyectos%20Copy@2x.png", label: "Proyectos Copy" },
-      { src: "../ION/Android/Proyecto%20Viviendas@2x.png", label: "Proyecto Viviendas" },
-      { src: "../ION/Android/Proyecto%20Viviendas%20Select@2x.png", label: "Proyecto Viviendas Select" },
-      { src: "../ION/Android/Proyecto%20Viviendas%20Copy@2x.png", label: "Proyecto Viviendas Copy" },
-      { src: "../ION/Android/Proyecto%20Niveles@2x.png", label: "Proyecto Niveles" },
-      { src: "../ION/Android/Proyecto%20Reportes@2x.png", label: "Proyecto Reportes" },
-      { src: "../ION/Android/Proyecto%20Minuta@2x.png", label: "Proyecto Minuta" },
-      { src: "../ION/Android/Proyecto%20Error%20Loc@2x.png", label: "Proyecto Error Loc" },
-      { src: "../ION/Android/Descargar%20Proyecto@2x.png", label: "Descargar Proyecto" },
-      { src: "../ION/Android/Galeria@2x.png", label: "Galería" },
-      { src: "../ION/Android/Geo@2x.png", label: "Geo" },
-      { src: "../ION/Android/Geo%20Confirmar@2x.png", label: "Geo Confirmar" },
-      { src: "../ION/Android/Geo%20Error@2x.png", label: "Geo Error" },
-      { src: "../ION/Android/Sincronizar@2x.png", label: "Sincronizar" },
-      { src: "../ION/Android/Sincronizar%20Progreso@2x.png", label: "Sincronizar Progreso" },
-      { src: "../ION/Android/Sincronizar%20Error@2x.png", label: "Sincronizar Error" },
-      { src: "../ION/Android/Subir%20Reporte@2x.png", label: "Subir Reporte" },
-      { src: "../ION/Android/Reporte%20Error%20Descarga@2x.png", label: "Reporte Error Descarga" },
-      { src: "../ION/Android/Propuesta2_forms%20@2x.png", label: "Propuesta Forms" }
-    ];
+    // ── Project Galleries ──
+    const galleries = {
+      ion: {
+        lightboxId: "ionLightbox",
+        gridId: "ionGalleryGrid",
+        images: [
+          { src: "../ION/Android/Splash@2x.png", label: "Splash" },
+          { src: "../ION/Android/Login@2x.png", label: "Login" },
+          { src: "../ION/Android/Login%20Correo@2x.png", label: "Login Correo" },
+          { src: "../ION/Android/Login%20Contrase%C3%B1a@2x.png", label: "Login Contraseña" },
+          { src: "../ION/Android/Recuperar@2x.png", label: "Recuperar" },
+          { src: "../ION/Android/Recuperar%20Exito@2x.png", label: "Recuperar Éxito" },
+          { src: "../ION/Android/Proyectos@2x.png", label: "Proyectos" },
+          { src: "../ION/Android/Proyectos%20Copy@2x.png", label: "Proyectos Copy" },
+          { src: "../ION/Android/Proyecto%20Viviendas@2x.png", label: "Proyecto Viviendas" },
+          { src: "../ION/Android/Proyecto%20Viviendas%20Select@2x.png", label: "Proyecto Viviendas Select" },
+          { src: "../ION/Android/Proyecto%20Viviendas%20Copy@2x.png", label: "Proyecto Viviendas Copy" },
+          { src: "../ION/Android/Proyecto%20Niveles@2x.png", label: "Proyecto Niveles" },
+          { src: "../ION/Android/Proyecto%20Reportes@2x.png", label: "Proyecto Reportes" },
+          { src: "../ION/Android/Proyecto%20Minuta@2x.png", label: "Proyecto Minuta" },
+          { src: "../ION/Android/Proyecto%20Error%20Loc@2x.png", label: "Proyecto Error Loc" },
+          { src: "../ION/Android/Descargar%20Proyecto@2x.png", label: "Descargar Proyecto" },
+          { src: "../ION/Android/Galeria@2x.png", label: "Galeria" },
+          { src: "../ION/Android/Geo@2x.png", label: "Geo" },
+          { src: "../ION/Android/Geo%20Confirmar@2x.png", label: "Geo Confirmar" },
+          { src: "../ION/Android/Geo%20Error@2x.png", label: "Geo Error" },
+          { src: "../ION/Android/Sincronizar@2x.png", label: "Sincronizar" },
+          { src: "../ION/Android/Sincronizar%20Progreso@2x.png", label: "Sincronizar Progreso" },
+          { src: "../ION/Android/Sincronizar%20Error@2x.png", label: "Sincronizar Error" },
+          { src: "../ION/Android/Subir%20Reporte@2x.png", label: "Subir Reporte" },
+          { src: "../ION/Android/Reporte%20Error%20Descarga@2x.png", label: "Reporte Error Descarga" },
+          { src: "../ION/Android/Propuesta2_forms%20@2x.png", label: "Propuesta Forms" }
+        ]
+      },
+      bilco: {
+        lightboxId: "bilcoLightbox",
+        gridId: "bilcoGalleryGrid",
+        images: [
+          { src: "../BILCO/login.png", label: "Login" },
+          { src: "../BILCO/Registro.png", label: "Registro" },
+          { src: "../BILCO/Menu.png", label: "Menu" },
+          { src: "../BILCO/Perfil.png", label: "Perfil" },
+          { src: "../BILCO/Editar%20perfil.png", label: "Editar perfil" },
+          { src: "../BILCO/Cambiar%20Contrase%C3%B1a.png", label: "Cambiar Contraseña" },
+          { src: "../BILCO/Nuevo%20caso.png", label: "Nuevo caso" },
+          { src: "../BILCO/Casos%20abiertos.png", label: "Casos abiertos" },
+          { src: "../BILCO/Detalle%20de%20un%20caso.png", label: "Detalle de un caso" },
+          { src: "../BILCO/Fotografias.png", label: "Fotografias" },
+          { src: "../BILCO/Ayuda.png", label: "Ayuda" },
+          { src: "../BILCO/Info%201.png", label: "Info 1" }
+        ]
+      },
+      easyNewz: {
+        lightboxId: "easyNewzLightbox",
+        gridId: "easyNewzGalleryGrid",
+        images: [
+          { src: "../Easy%20Newz/photo_1_2026-03-16_19-41-57.jpg", label: "Home" },
+          { src: "../Easy%20Newz/photo_2_2026-03-16_19-41-57.jpg", label: "News Feed" },
+          { src: "../Easy%20Newz/photo_3_2026-03-16_19-41-57.jpg", label: "Article View" },
+          { src: "../Easy%20Newz/photo_4_2026-03-16_19-41-57.jpg", label: "Article Detail" },
+          { src: "../Easy%20Newz/photo_5_2026-03-16_19-41-57.jpg", label: "Categories" },
+          { src: "../Easy%20Newz/photo_6_2026-03-16_19-41-57.jpg", label: "Farmer Content" },
+          { src: "../Easy%20Newz/photo_7_2026-03-16_19-41-57.jpg", label: "Saved Content" },
+          { src: "../Easy%20Newz/photo_8_2026-03-16_19-41-57.jpg", label: "Notifications" },
+          { src: "../Easy%20Newz/photo_9_2026-03-16_19-41-57.jpg", label: "Profile" },
+          { src: "../Easy%20Newz/photo_10_2026-03-16_19-41-57.jpg", label: "Settings" },
+          { src: "../Easy%20Newz/photo_11_2026-03-16_19-41-57.jpg", label: "More Content" }
+        ]
+      }
+    };
 
+    let currentGalleryKey = null;
     let currentViewerIndex = 0;
 
-    // Build gallery grid
-    const galleryGrid = document.getElementById("ionGalleryGrid");
-    ionImages.forEach((img, i) => {
-      const el = document.createElement("img");
-      el.src = img.src;
-      el.alt = img.label;
-      el.loading = "lazy";
-      el.onclick = () => openViewer(i);
-      galleryGrid.appendChild(el);
+    Object.values(galleries).forEach((gallery) => {
+      const grid = document.getElementById(gallery.gridId);
+      gallery.images.forEach((img, i) => {
+        const el = document.createElement("img");
+        el.src = img.src;
+        el.alt = img.label;
+        el.loading = "lazy";
+        el.onclick = () => openViewer(i);
+        grid.appendChild(el);
+      });
     });
 
-    function openGallery() {
-      document.getElementById("ionLightbox").classList.add("open");
+    function openGallery(key) {
+      currentGalleryKey = key;
+      document.getElementById(galleries[key].lightboxId).classList.add("open");
       document.body.style.overflow = "hidden";
     }
     function closeGallery() {
-      document.getElementById("ionLightbox").classList.remove("open");
+      if (currentGalleryKey) {
+        document.getElementById(galleries[currentGalleryKey].lightboxId).classList.remove("open");
+      }
       document.body.style.overflow = "";
     }
     function openViewer(index) {
@@ -1067,15 +1155,17 @@
       document.getElementById("imageViewer").classList.remove("open");
     }
     function navigateViewer(dir) {
-      currentViewerIndex = (currentViewerIndex + dir + ionImages.length) % ionImages.length;
+      const images = galleries[currentGalleryKey].images;
+      currentViewerIndex = (currentViewerIndex + dir + images.length) % images.length;
       updateViewer();
     }
     function updateViewer() {
-      const img = ionImages[currentViewerIndex];
+      const images = galleries[currentGalleryKey].images;
+      const img = images[currentViewerIndex];
       document.getElementById("viewerImg").src = img.src;
       document.getElementById("viewerImg").alt = img.label;
       document.getElementById("viewerCounter").textContent =
-        (currentViewerIndex + 1) + " / " + ionImages.length + " — " + img.label;
+        (currentViewerIndex + 1) + " / " + images.length + " - " + img.label;
     }
     document.getElementById("imageViewer").addEventListener("click", (e) => {
       if (e.target === e.currentTarget) closeViewer();
@@ -1085,7 +1175,7 @@
         if (e.key === "Escape") closeViewer();
         if (e.key === "ArrowLeft") navigateViewer(-1);
         if (e.key === "ArrowRight") navigateViewer(1);
-      } else if (document.getElementById("ionLightbox").classList.contains("open")) {
+      } else if (currentGalleryKey && document.getElementById(galleries[currentGalleryKey].lightboxId).classList.contains("open")) {
         if (e.key === "Escape") closeGallery();
       }
     });
