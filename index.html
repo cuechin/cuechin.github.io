@@ -740,7 +740,7 @@
     <div class="container">
       <a href="#" class="logo">andres<span class="gradient-text">mora</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="assets/CV_MoraAndres.pdf" download="Andres_Mora_CV.pdf">CV</a></li>
+        <li><a href="assets/CvMoraAndres.pdf" download="CvMoraAndres.pdf">CV</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -760,7 +760,7 @@
         <p>A developer who builds modern, performant applications and loves turning ideas into real products.</p>
         <div class="btn-group">
           <a href="#projects" class="btn btn-primary">View Projects &darr;</a>
-          <a href="assets/CV_MoraAndres.pdf" class="btn btn-outline" download="Andres_Mora_CV.pdf">Download CV</a>
+          <a href="assets/CvMoraAndres.pdf" class="btn btn-outline" download="CvMoraAndres.pdf">Download CV</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
@@ -781,6 +781,57 @@
       <div class="section-divider reveal"></div>
 
       <div class="projects-grid">
+
+        <!-- HAL -->
+        <div class="project-card reveal">
+          <div class="gallery-preview" onclick="openGallery('hal')">
+            <img src="assets/projects/hal/hal-01.png" alt="HAL Field Surveying 1" loading="lazy">
+            <img src="assets/projects/hal/hal-02.png" alt="HAL Field Surveying 2" loading="lazy">
+            <img src="assets/projects/hal/hal-03.png" alt="HAL Field Surveying 3" loading="lazy">
+            <img src="assets/projects/hal/hal-04.png" alt="HAL Field Surveying 4" loading="lazy">
+            <img src="assets/projects/hal/hal-05.png" alt="HAL Field Surveying 5" loading="lazy">
+            <img src="assets/projects/hal/hal-06.png" alt="HAL Field Surveying 6" loading="lazy">
+            <div class="gallery-overlay">View all 31 screenshots &rarr;</div>
+          </div>
+          <div class="project-body">
+            <h3>HAL</h3>
+            <p>iOS field-surveying app built from scratch for subsurface utility mapping, fusing ARKit/LiDAR depth with RTK GNSS positioning. Reduces field capture time and improves as-built positional accuracy to centimeter-level precision, cutting rework and utility-strike risk in excavation planning.</p>
+            <div class="project-tags">
+              <span class="tag">iOS</span>
+              <span class="tag">ARKit</span>
+              <span class="tag">LiDAR</span>
+              <span class="tag">RTK GNSS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" onclick="event.preventDefault(); openGallery('hal')">View Gallery</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Easy Newz -->
+        <div class="project-card reveal">
+          <div class="gallery-preview" onclick="openGallery('easyNewz')">
+            <img src="assets/projects/easy-newz/home.jpg" alt="Easy Newz Screenshot 1" loading="lazy">
+            <img src="assets/projects/easy-newz/news_feed.jpg" alt="Easy Newz Screenshot 2" loading="lazy">
+            <img src="assets/projects/easy-newz/article_view.jpg" alt="Easy Newz Screenshot 3" loading="lazy">
+            <img src="assets/projects/easy-newz/article_detail.jpg" alt="Easy Newz Screenshot 4" loading="lazy">
+            <img src="assets/projects/easy-newz/categories.jpg" alt="Easy Newz Screenshot 5" loading="lazy">
+            <img src="assets/projects/easy-newz/farmer_content.jpg" alt="Easy Newz Screenshot 6" loading="lazy">
+            <div class="gallery-overlay">View all 11 screenshots &rarr;</div>
+          </div>
+          <div class="project-body">
+            <h3>Easy Newz</h3>
+            <p>News platform for farmers on Android and iOS, enhanced with new features and Firebase integrations to improve the product experience and keep article content in sync with the mobile app.</p>
+            <div class="project-tags">
+              <span class="tag">Android</span>
+              <span class="tag">iOS</span>
+              <span class="tag">Firebase</span>
+            </div>
+            <div class="project-links">
+              <a href="#" onclick="event.preventDefault(); openGallery('easyNewz')">View Gallery</a>
+            </div>
+          </div>
+        </div>
 
         <!-- ION -->
         <div class="project-card reveal">
@@ -803,6 +854,33 @@
             </div>
             <div class="project-links">
               <a href="#" onclick="event.preventDefault(); openGallery('ion')">View Gallery</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kiosko Moneycenter -->
+        <div class="project-card reveal">
+          <div class="gallery-preview" onclick="openGallery('kiosko')">
+            <img src="assets/projects/kiosko/menu.png" alt="Kiosko Menu" loading="lazy">
+            <img src="assets/projects/kiosko/login.png" alt="Kiosko Login" loading="lazy">
+            <img src="assets/projects/kiosko/bienvenido.png" alt="Kiosko Bienvenido" loading="lazy">
+            <img src="assets/projects/kiosko/envio1.png" alt="Kiosko Envio Remesa Paso 1" loading="lazy">
+            <img src="assets/projects/kiosko/envio2.png" alt="Kiosko Envio Remesa Paso 2" loading="lazy">
+            <img src="assets/projects/kiosko/configuracion.png" alt="Kiosko Configuracion" loading="lazy">
+            <img src="assets/projects/kiosko/cobro3.png" alt="Kiosko Cobro Remesas" loading="lazy">
+            <img src="assets/projects/kiosko/elo_with_toshiba.png" alt="Kiosko Elo with Toshiba" loading="lazy">
+            <div class="gallery-overlay">View all 28 screenshots &rarr;</div>
+          </div>
+          <div class="project-body">
+            <h3>Walmart Moneycenter kiosk</h3>
+            <p>Self-service kiosk experience for remittances and bill payments at Walmart stores across Central America, including registration, checkout flows, service provider selection, and email/ticket notifications.</p>
+            <div class="project-tags">
+              <span class="tag">Android</span>
+              <span class="tag">Kiosk</span>
+              <span class="tag">Payments</span>
+            </div>
+            <div class="project-links">
+              <a href="#" onclick="event.preventDefault(); openGallery('kiosko')">View Gallery</a>
             </div>
           </div>
         </div>
@@ -830,32 +908,7 @@
               <a href="#" onclick="event.preventDefault(); openGallery('bilco')">View Gallery</a>
             </div>
           </div>
-        </div>
-
-        <!-- Easy Newz -->
-        <div class="project-card reveal">
-          <div class="gallery-preview" onclick="openGallery('easyNewz')">
-            <img src="assets/projects/easy-newz/photo_1_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 1" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_2_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 2" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_3_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 3" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_4_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 4" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_5_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 5" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_6_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 6" loading="lazy">
-            <div class="gallery-overlay">View all 11 screenshots &rarr;</div>
-          </div>
-          <div class="project-body">
-            <h3>Easy Newz</h3>
-            <p>News platform for farmers on Android and iOS, enhanced with new features and Firebase integrations to improve the product experience and keep article content in sync with the mobile app.</p>
-            <div class="project-tags">
-              <span class="tag">Android</span>
-              <span class="tag">iOS</span>
-              <span class="tag">Firebase</span>
-            </div>
-            <div class="project-links">
-              <a href="#" onclick="event.preventDefault(); openGallery('easyNewz')">View Gallery</a>
-            </div>
-          </div>
-        </div>
+        </div> 
 
         <!-- ★ Add more project cards by copying the block above ★ -->
 
@@ -958,6 +1011,32 @@
     </div>
     <div class="lightbox-body">
       <div class="lightbox-grid" id="easyNewzGalleryGrid">
+        <!-- Images injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Kiosko Gallery Lightbox -->
+  <div class="lightbox" id="kioskoLightbox">
+    <div class="lightbox-header">
+      <h3>Kiosko Moneycenter — <span class="gradient-text">Screenshots</span></h3>
+      <button class="lightbox-close" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-grid" id="kioskoGalleryGrid">
+        <!-- Images injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- HAL Gallery Lightbox -->
+  <div class="lightbox" id="halLightbox">
+    <div class="lightbox-header">
+      <h3>HAL — <span class="gradient-text">Screenshots</span></h3>
+      <button class="lightbox-close" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-grid" id="halGalleryGrid">
         <!-- Images injected by JS -->
       </div>
     </div>
@@ -1105,17 +1184,101 @@
         lightboxId: "easyNewzLightbox",
         gridId: "easyNewzGalleryGrid",
         images: [
-          { src: "assets/projects/easy-newz/photo_1_2026-03-16_19-41-57.jpg", label: "Home" },
-          { src: "assets/projects/easy-newz/photo_2_2026-03-16_19-41-57.jpg", label: "News Feed" },
-          { src: "assets/projects/easy-newz/photo_3_2026-03-16_19-41-57.jpg", label: "Article View" },
-          { src: "assets/projects/easy-newz/photo_4_2026-03-16_19-41-57.jpg", label: "Article Detail" },
-          { src: "assets/projects/easy-newz/photo_5_2026-03-16_19-41-57.jpg", label: "Categories" },
-          { src: "assets/projects/easy-newz/photo_6_2026-03-16_19-41-57.jpg", label: "Farmer Content" },
-          { src: "assets/projects/easy-newz/photo_7_2026-03-16_19-41-57.jpg", label: "Saved Content" },
-          { src: "assets/projects/easy-newz/photo_8_2026-03-16_19-41-57.jpg", label: "Notifications" },
-          { src: "assets/projects/easy-newz/photo_9_2026-03-16_19-41-57.jpg", label: "Profile" },
-          { src: "assets/projects/easy-newz/photo_10_2026-03-16_19-41-57.jpg", label: "Settings" },
-          { src: "assets/projects/easy-newz/photo_11_2026-03-16_19-41-57.jpg", label: "More Content" }
+          { src: "assets/projects/easy-newz/easy_newz_splash.jpg", label: "Splash" },
+          { src: "assets/projects/easy-newz/home.jpg", label: "Home" },
+          { src: "assets/projects/easy-newz/news_feed.jpg", label: "News Feed" },
+          { src: "assets/projects/easy-newz/article_view.jpg", label: "Article View" },
+          { src: "assets/projects/easy-newz/article_detail.jpg", label: "Article Detail" },
+          { src: "assets/projects/easy-newz/categories.jpg", label: "Categories" },
+          { src: "assets/projects/easy-newz/farmer_content.jpg", label: "Farmer Content" },
+          { src: "assets/projects/easy-newz/saved_content.jpg", label: "Saved Content" },
+          { src: "assets/projects/easy-newz/notifications.jpg", label: "Notifications" },
+          { src: "assets/projects/easy-newz/profile.jpg", label: "Profile" },
+          { src: "assets/projects/easy-newz/settings.jpg", label: "Settings" }
+        ]
+      },
+      kiosko: {
+        lightboxId: "kioskoLightbox",
+        gridId: "kioskoGalleryGrid",
+        images: [
+          { src: "assets/projects/kiosko/bienvenido.png", label: "Bienvenido" },
+          { src: "assets/projects/kiosko/aviso_privacidad.png", label: "Aviso Privacidad" },
+          { src: "assets/projects/kiosko/configuracion.png", label: "Configuracion" },
+          { src: "assets/projects/kiosko/login.png", label: "Login" },
+          { src: "assets/projects/kiosko/registro.png", label: "Registro" },
+          { src: "assets/projects/kiosko/registro_exitoso.png", label: "Registro Exitoso" },
+          { src: "assets/projects/kiosko/menu.png", label: "Menu" },
+          { src: "assets/projects/kiosko/menu_remesas.png", label: "Menu Remesas" },
+          { src: "assets/projects/kiosko/envio1.png", label: "Envio Paso 1" },
+          { src: "assets/projects/kiosko/envio2.png", label: "Envio Paso 2" },
+          { src: "assets/projects/kiosko/envio3.png", label: "Envio Paso 3" },
+          { src: "assets/projects/kiosko/correo_envio.png", label: "Correo Envio" },
+          { src: "assets/projects/kiosko/cobro1.png", label: "Cobro Paso 1" },
+          { src: "assets/projects/kiosko/cobro2.png", label: "Cobro Paso 2" },
+          { src: "assets/projects/kiosko/cobro3.png", label: "Cobro Paso 3" },
+          { src: "assets/projects/kiosko/enviar_correo.png", label: "Enviar Correo" },
+          { src: "assets/projects/kiosko/correo_pago.png", label: "Correo Pago" },
+          { src: "assets/projects/kiosko/menu_servicios.png", label: "Menu Servicios" },
+          { src: "assets/projects/kiosko/proveedores_servicios_recargas.png", label: "Proveedores Servicios Recargas" },
+          { src: "assets/projects/kiosko/recarga_kolbi.png", label: "Recarga Kolbi" },
+          { src: "assets/projects/kiosko/proveedores_servicios_publicos.png", label: "Proveedores Servicios Publicos" },
+          { src: "assets/projects/kiosko/consultar_servicio.png", label: "Consultar Servicio" },
+          { src: "assets/projects/kiosko/carrito.png", label: "Carrito" },
+          { src: "assets/projects/kiosko/notificacion_envio_codigo_barras.png", label: "Notificacion Envio Codigo Barras" },
+          { src: "assets/projects/kiosko/city-required.png", label: "Validacion Ciudad" },
+          { src: "assets/projects/kiosko/contador.png", label: "Contador Sesion" },
+          { src: "assets/projects/kiosko/reversa%20remesa.jpg", label: "Reversa Remesa" },
+          { src: "assets/projects/kiosko/elo_with_toshiba.png", label: "Elo with Toshiba" },
+          { src: "assets/projects/kiosko/tiquete1.png", label: "Tiquete" }
+        ]
+      },
+      hal: {
+        lightboxId: "halLightbox",
+        gridId: "halGalleryGrid",
+        images: [
+          { src: "assets/projects/hal/hal-01.png", label: "Field Surveying 1" },
+          { src: "assets/projects/hal/hal-02.png", label: "Field Surveying 2" },
+          { src: "assets/projects/hal/hal-03.png", label: "Field Surveying 3" },
+          { src: "assets/projects/hal/hal-04.png", label: "Field Surveying 4" },
+          { src: "assets/projects/hal/hal-05.png", label: "Field Surveying 5" },
+          { src: "assets/projects/hal/hal-06.png", label: "Field Surveying 6" },
+          { src: "assets/projects/hal/hal-07.png", label: "Field Surveying 7" },
+          { src: "assets/projects/hal/hal-08.png", label: "Field Surveying 8" },
+          { src: "assets/projects/hal/hal-09.png", label: "Field Surveying 9" },
+          { src: "assets/projects/hal/hal-10.png", label: "Field Surveying 10" },
+          { src: "assets/projects/hal/hal-11.png", label: "Field Surveying 11" },
+          { src: "assets/projects/hal/hal-12.png", label: "Field Surveying 12" },
+          { src: "assets/projects/hal/hal-13.png", label: "Field Surveying 13" },
+          { src: "assets/projects/hal/hal-14.png", label: "Field Surveying 14" },
+          { src: "assets/projects/hal/hal-15.png", label: "Field Surveying 15" },
+          { src: "assets/projects/hal/hal-16.png", label: "Field Surveying 16" },
+          { src: "assets/projects/hal/hal-17.png", label: "Field Surveying 17" },
+          { src: "assets/projects/hal/hal-18.png", label: "Field Surveying 18" },
+          { src: "assets/projects/hal/hal-31.png", label: "Field Surveying 31" },
+          { src: "assets/projects/hal/hal-33.jpg", label: "Field Surveying 33" },
+          { src: "assets/projects/hal/hal-32.png", label: "Field Surveying 32" },
+          { src: "assets/projects/hal/hal-34.jpg", label: "Field Surveying 34" },
+          { src: "assets/projects/hal/hal-35.jpg", label: "Field Surveying 35" },
+          { src: "assets/projects/hal/hal-36.jpg", label: "Field Surveying 36" },
+          { src: "assets/projects/hal/hal-37.jpg", label: "Field Surveying 37" },
+          { src: "assets/projects/hal/hal-38.jpg", label: "Field Surveying 38" },
+          { src: "assets/projects/hal/hal-39.jpg", label: "Field Surveying 39" },
+          { src: "assets/projects/hal/hal-40.jpg", label: "Field Surveying 40" },
+          { src: "assets/projects/hal/hal-41.jpg", label: "Field Surveying 41" },
+          { src: "assets/projects/hal/hal-42.jpg", label: "Field Surveying 42" },
+          { src: "assets/projects/hal/hal-43.jpg", label: "Field Surveying 43" },
+          { src: "assets/projects/hal/hal-19.png", label: "Field Surveying 19" },
+          { src: "assets/projects/hal/hal-20.png", label: "Field Surveying 20" },
+          { src: "assets/projects/hal/hal-21.png", label: "Field Surveying 21" },
+          { src: "assets/projects/hal/hal-22.png", label: "Field Surveying 22" },
+          { src: "assets/projects/hal/hal-23.png", label: "Field Surveying 23" },
+          { src: "assets/projects/hal/hal-24.png", label: "Field Surveying 24" },
+          { src: "assets/projects/hal/hal-25.png", label: "Field Surveying 25" },
+          { src: "assets/projects/hal/hal-26.png", label: "Field Surveying 26" },
+          { src: "assets/projects/hal/hal-27.png", label: "Field Surveying 27" },
+          { src: "assets/projects/hal/hal-28.png", label: "Field Surveying 28" },
+          { src: "assets/projects/hal/hal-29.png", label: "Field Surveying 29" },
+          { src: "assets/projects/hal/hal-30.png", label: "Field Surveying 30" }
         ]
       }
     };
