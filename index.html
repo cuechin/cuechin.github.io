@@ -612,6 +612,24 @@
       padding: 16px 24px;
       border-bottom: 1px solid var(--border);
       flex-shrink: 0;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .lightbox-tabs {
+      display: flex; gap: 8px;
+    }
+    .tab-btn {
+      padding: 6px 16px; border-radius: 8px;
+      background: transparent; border: 1px solid var(--border);
+      color: var(--muted); font-size: 0.85rem; font-weight: 600;
+      cursor: pointer; transition: all var(--transition);
+    }
+    .tab-btn.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff;
+    }
+    .tab-btn:hover:not(.active) {
+      border-color: var(--accent); color: var(--accent);
     }
     .lightbox-header h3 {
       font-size: 1.1rem; font-weight: 700;
@@ -709,6 +727,8 @@
       .gallery-preview { grid-template-columns: repeat(2, 1fr); height: 180px; }
       .lightbox-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
       .lightbox-body { padding: 16px; }
+      .lightbox-header { flex-direction: column; align-items: flex-start; }
+      .lightbox-tabs { width: 100%; }
     }
 
     /* ── Reduced motion ── */
@@ -1033,11 +1053,18 @@
   <div class="lightbox" id="halLightbox">
     <div class="lightbox-header">
       <h3>HAL — <span class="gradient-text">Screenshots</span></h3>
+      <div class="lightbox-tabs">
+        <button class="tab-btn active" onclick="switchHalTab('mobile')">Mobile</button>
+        <button class="tab-btn" onclick="switchHalTab('web')">Web</button>
+      </div>
       <button class="lightbox-close" onclick="closeGallery()">&times;</button>
     </div>
     <div class="lightbox-body">
-      <div class="lightbox-grid" id="halGalleryGrid">
-        <!-- Images injected by JS -->
+      <div class="lightbox-grid" id="halGalleryGridMobile">
+        <!-- Mobile images injected by JS -->
+      </div>
+      <div class="lightbox-grid" id="halGalleryGridWeb" style="display:none;">
+        <!-- Web images injected by JS -->
       </div>
     </div>
   </div>
@@ -1234,61 +1261,95 @@
       },
       hal: {
         lightboxId: "halLightbox",
-        gridId: "halGalleryGrid",
-        images: [
-          { src: "assets/projects/hal/hal-01.png", label: "Field Surveying 1" },
-          { src: "assets/projects/hal/hal-02.png", label: "Field Surveying 2" },
-          { src: "assets/projects/hal/hal-03.png", label: "Field Surveying 3" },
-          { src: "assets/projects/hal/hal-04.png", label: "Field Surveying 4" },
-          { src: "assets/projects/hal/hal-05.png", label: "Field Surveying 5" },
-          { src: "assets/projects/hal/hal-06.png", label: "Field Surveying 6" },
-          { src: "assets/projects/hal/hal-07.png", label: "Field Surveying 7" },
-          { src: "assets/projects/hal/hal-08.png", label: "Field Surveying 8" },
-          { src: "assets/projects/hal/hal-09.png", label: "Field Surveying 9" },
-          { src: "assets/projects/hal/hal-10.png", label: "Field Surveying 10" },
-          { src: "assets/projects/hal/hal-11.png", label: "Field Surveying 11" },
-          { src: "assets/projects/hal/hal-12.png", label: "Field Surveying 12" },
-          { src: "assets/projects/hal/hal-13.png", label: "Field Surveying 13" },
-          { src: "assets/projects/hal/hal-14.png", label: "Field Surveying 14" },
-          { src: "assets/projects/hal/hal-15.png", label: "Field Surveying 15" },
-          { src: "assets/projects/hal/hal-16.png", label: "Field Surveying 16" },
-          { src: "assets/projects/hal/hal-17.png", label: "Field Surveying 17" },
-          { src: "assets/projects/hal/hal-18.png", label: "Field Surveying 18" },
-          { src: "assets/projects/hal/hal-31.png", label: "Field Surveying 31" },
-          { src: "assets/projects/hal/hal-33.jpg", label: "Field Surveying 33" },
-          { src: "assets/projects/hal/hal-32.png", label: "Field Surveying 32" },
-          { src: "assets/projects/hal/hal-34.jpg", label: "Field Surveying 34" },
-          { src: "assets/projects/hal/hal-35.jpg", label: "Field Surveying 35" },
-          { src: "assets/projects/hal/hal-36.jpg", label: "Field Surveying 36" },
-          { src: "assets/projects/hal/hal-37.jpg", label: "Field Surveying 37" },
-          { src: "assets/projects/hal/hal-38.jpg", label: "Field Surveying 38" },
-          { src: "assets/projects/hal/hal-39.jpg", label: "Field Surveying 39" },
-          { src: "assets/projects/hal/hal-40.jpg", label: "Field Surveying 40" },
-          { src: "assets/projects/hal/hal-41.jpg", label: "Field Surveying 41" },
-          { src: "assets/projects/hal/hal-42.jpg", label: "Field Surveying 42" },
-          { src: "assets/projects/hal/hal-43.jpg", label: "Field Surveying 43" },
-          { src: "assets/projects/hal/hal-19.png", label: "Field Surveying 19" },
-          { src: "assets/projects/hal/hal-20.png", label: "Field Surveying 20" },
-          { src: "assets/projects/hal/hal-21.png", label: "Field Surveying 21" },
-          { src: "assets/projects/hal/hal-22.png", label: "Field Surveying 22" },
-          { src: "assets/projects/hal/hal-23.png", label: "Field Surveying 23" },
-          { src: "assets/projects/hal/hal-24.png", label: "Field Surveying 24" },
-          { src: "assets/projects/hal/hal-25.png", label: "Field Surveying 25" },
-          { src: "assets/projects/hal/hal-26.png", label: "Field Surveying 26" },
-          { src: "assets/projects/hal/hal-27.png", label: "Field Surveying 27" },
-          { src: "assets/projects/hal/hal-28.png", label: "Field Surveying 28" },
-          { src: "assets/projects/hal/hal-29.png", label: "Field Surveying 29" },
-          { src: "assets/projects/hal/hal-30.png", label: "Field Surveying 30" }
-        ]
+        mobile: {
+          gridId: "halGalleryGridMobile",
+          images: [
+            { src: "assets/projects/hal/mobile/hal-01.png", label: "Field Surveying 1" },
+            { src: "assets/projects/hal/mobile/hal-02.png", label: "Field Surveying 2" },
+            { src: "assets/projects/hal/mobile/hal-03.png", label: "Field Surveying 3" },
+            { src: "assets/projects/hal/mobile/hal-04.png", label: "Field Surveying 4" },
+            { src: "assets/projects/hal/mobile/hal-05.png", label: "Field Surveying 5" },
+            { src: "assets/projects/hal/mobile/hal-06.png", label: "Field Surveying 6" },
+            { src: "assets/projects/hal/mobile/hal-07.png", label: "Field Surveying 7" },
+            { src: "assets/projects/hal/mobile/hal-08.png", label: "Field Surveying 8" },
+            { src: "assets/projects/hal/mobile/hal-09.png", label: "Field Surveying 9" },
+            { src: "assets/projects/hal/mobile/hal-10.png", label: "Field Surveying 10" },
+            { src: "assets/projects/hal/mobile/hal-11.png", label: "Field Surveying 11" },
+            { src: "assets/projects/hal/mobile/hal-12.png", label: "Field Surveying 12" },
+            { src: "assets/projects/hal/mobile/hal-13.png", label: "Field Surveying 13" },
+            { src: "assets/projects/hal/mobile/hal-14.png", label: "Field Surveying 14" },
+            { src: "assets/projects/hal/mobile/hal-15.png", label: "Field Surveying 15" },
+            { src: "assets/projects/hal/mobile/hal-16.png", label: "Field Surveying 16" },
+            { src: "assets/projects/hal/mobile/hal-17.png", label: "Field Surveying 17" },
+            { src: "assets/projects/hal/mobile/hal-18.png", label: "Field Surveying 18" },
+            { src: "assets/projects/hal/mobile/hal-31.png", label: "Field Surveying 31" },
+            { src: "assets/projects/hal/mobile/hal-33.jpg", label: "Field Surveying 33" },
+            { src: "assets/projects/hal/mobile/hal-32.png", label: "Field Surveying 32" },
+            { src: "assets/projects/hal/mobile/hal-34.jpg", label: "Field Surveying 34" },
+            { src: "assets/projects/hal/mobile/hal-35.jpg", label: "Field Surveying 35" },
+            { src: "assets/projects/hal/mobile/hal-36.jpg", label: "Field Surveying 36" },
+            { src: "assets/projects/hal/mobile/hal-37.jpg", label: "Field Surveying 37" },
+            { src: "assets/projects/hal/mobile/hal-38.jpg", label: "Field Surveying 38" },
+            { src: "assets/projects/hal/mobile/hal-39.jpg", label: "Field Surveying 39" },
+            { src: "assets/projects/hal/mobile/hal-40.jpg", label: "Field Surveying 40" },
+            { src: "assets/projects/hal/mobile/hal-41.jpg", label: "Field Surveying 41" },
+            { src: "assets/projects/hal/mobile/hal-42.jpg", label: "Field Surveying 42" },
+            { src: "assets/projects/hal/mobile/hal-43.jpg", label: "Field Surveying 43" },
+            { src: "assets/projects/hal/mobile/hal-19.png", label: "Field Surveying 19" },
+            { src: "assets/projects/hal/mobile/hal-20.png", label: "Field Surveying 20" },
+            { src: "assets/projects/hal/mobile/hal-21.png", label: "Field Surveying 21" },
+            { src: "assets/projects/hal/mobile/hal-22.png", label: "Field Surveying 22" },
+            { src: "assets/projects/hal/mobile/hal-23.png", label: "Field Surveying 23" },
+            { src: "assets/projects/hal/mobile/hal-24.png", label: "Field Surveying 24" },
+            { src: "assets/projects/hal/mobile/hal-25.png", label: "Field Surveying 25" },
+            { src: "assets/projects/hal/mobile/hal-26.png", label: "Field Surveying 26" },
+            { src: "assets/projects/hal/mobile/hal-27.png", label: "Field Surveying 27" },
+            { src: "assets/projects/hal/mobile/hal-28.png", label: "Field Surveying 28" },
+            { src: "assets/projects/hal/mobile/hal-29.png", label: "Field Surveying 29" },
+            { src: "assets/projects/hal/mobile/hal-30.png", label: "Field Surveying 30" }
+          ]
+        },
+        web: {
+          gridId: "halGalleryGridWeb",
+          images: [
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-2026-04-21-23_11_15.png", label: "Dashboard" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-project-2026-04-22-21_38_21.png", label: "Project View" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-subscriptions-2026-04-22-21_26_19.png", label: "Subscriptions" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-subscriptions-steps-2026-04-22-21_32_29.png", label: "Subscription Steps" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-login-2026-04-22-21_34_38.png", label: "Login" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-support-help-2026-04-22-21_33_34.png", label: "Support" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-settings-2026-04-22-21_40_21.png", label: "Settings" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-forgot-password-2026-04-22-21_35_51.png", label: "Forgot Password" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-reset-password-2026-04-22-21_36_36.png", label: "Reset Password" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-terms-and-conditions-2026-04-21-23_13_51.png", label: "Terms & Conditions" }
+          ]
+        }
       }
     };
 
     let currentGalleryKey = null;
     let currentViewerIndex = 0;
+    let halCurrentTab = "mobile";
 
-    Object.values(galleries).forEach((gallery) => {
-      const grid = document.getElementById(gallery.gridId);
-      gallery.images.forEach((img, i) => {
+    function populateGallery(galleryKey) {
+      const gallery = galleries[galleryKey];
+      if (gallery.mobile && gallery.web) {
+        // HAL project with tabs
+        const mobileTab = gallery.mobile;
+        const webTab = gallery.web;
+        populateGalleryGrid(mobileTab.gridId, mobileTab.images);
+        populateGalleryGrid(webTab.gridId, webTab.images);
+      } else {
+        // Regular project
+        populateGalleryGrid(gallery.gridId, gallery.images);
+      }
+    }
+
+    function populateGalleryGrid(gridId, images) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      grid.innerHTML = "";
+      images.forEach((img, i) => {
         const el = document.createElement("img");
         el.src = img.src;
         el.alt = img.label;
@@ -1296,12 +1357,34 @@
         el.onclick = () => openViewer(i);
         grid.appendChild(el);
       });
+    }
+
+    Object.keys(galleries).forEach((key) => {
+      populateGallery(key);
     });
 
     function openGallery(key) {
       currentGalleryKey = key;
+      if (key === "hal") {
+        halCurrentTab = "mobile";
+        document.querySelectorAll("#halLightbox .tab-btn").forEach((btn, i) => {
+          btn.classList.toggle("active", i === 0);
+        });
+        document.getElementById("halGalleryGridMobile").style.display = "";
+        document.getElementById("halGalleryGridWeb").style.display = "none";
+      }
       document.getElementById(galleries[key].lightboxId).classList.add("open");
       document.body.style.overflow = "hidden";
+    }
+
+    function switchHalTab(tab) {
+      halCurrentTab = tab;
+      document.querySelectorAll("#halLightbox .tab-btn").forEach((btn, i) => {
+        const isActive = (i === 0 && tab === "mobile") || (i === 1 && tab === "web");
+        btn.classList.toggle("active", isActive);
+      });
+      document.getElementById("halGalleryGridMobile").style.display = tab === "mobile" ? "" : "none";
+      document.getElementById("halGalleryGridWeb").style.display = tab === "web" ? "" : "none";
     }
     function closeGallery() {
       if (currentGalleryKey) {
@@ -1318,12 +1401,22 @@
       document.getElementById("imageViewer").classList.remove("open");
     }
     function navigateViewer(dir) {
-      const images = galleries[currentGalleryKey].images;
+      let images;
+      if (currentGalleryKey === "hal") {
+        images = halCurrentTab === "mobile" ? galleries[currentGalleryKey].mobile.images : galleries[currentGalleryKey].web.images;
+      } else {
+        images = galleries[currentGalleryKey].images;
+      }
       currentViewerIndex = (currentViewerIndex + dir + images.length) % images.length;
       updateViewer();
     }
     function updateViewer() {
-      const images = galleries[currentGalleryKey].images;
+      let images;
+      if (currentGalleryKey === "hal") {
+        images = halCurrentTab === "mobile" ? galleries[currentGalleryKey].mobile.images : galleries[currentGalleryKey].web.images;
+      } else {
+        images = galleries[currentGalleryKey].images;
+      }
       const img = images[currentViewerIndex];
       document.getElementById("viewerImg").src = img.src;
       document.getElementById("viewerImg").alt = img.label;
