@@ -805,13 +805,13 @@
         <!-- HAL -->
         <div class="project-card reveal">
           <div class="gallery-preview" onclick="openGallery('hal')">
-            <img src="assets/projects/hal/hal-01.png" alt="HAL Field Surveying 1" loading="lazy">
-            <img src="assets/projects/hal/hal-02.png" alt="HAL Field Surveying 2" loading="lazy">
-            <img src="assets/projects/hal/hal-03.png" alt="HAL Field Surveying 3" loading="lazy">
-            <img src="assets/projects/hal/hal-04.png" alt="HAL Field Surveying 4" loading="lazy">
-            <img src="assets/projects/hal/hal-05.png" alt="HAL Field Surveying 5" loading="lazy">
-            <img src="assets/projects/hal/hal-06.png" alt="HAL Field Surveying 6" loading="lazy">
-            <div class="gallery-overlay">View all 31 screenshots &rarr;</div>
+            <img src="assets/projects/hal/mobile/hal-01.png" alt="HAL Field Surveying 1" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-02.png" alt="HAL Field Surveying 2" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-03.png" alt="HAL Field Surveying 3" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-04.png" alt="HAL Field Surveying 4" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-05.png" alt="HAL Field Surveying 5" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-06.png" alt="HAL Field Surveying 6" loading="lazy">
+            <div class="gallery-overlay">View all 301 screenshots &rarr;</div>
           </div>
           <div class="project-body">
             <h3>HAL</h3>
@@ -1264,49 +1264,28 @@
         mobile: {
           gridId: "halGalleryGridMobile",
           images: [
-            { src: "assets/projects/hal/mobile/hal-01.png", label: "Field Surveying 1" },
-            { src: "assets/projects/hal/mobile/hal-02.png", label: "Field Surveying 2" },
-            { src: "assets/projects/hal/mobile/hal-03.png", label: "Field Surveying 3" },
-            { src: "assets/projects/hal/mobile/hal-04.png", label: "Field Surveying 4" },
-            { src: "assets/projects/hal/mobile/hal-05.png", label: "Field Surveying 5" },
-            { src: "assets/projects/hal/mobile/hal-06.png", label: "Field Surveying 6" },
-            { src: "assets/projects/hal/mobile/hal-07.png", label: "Field Surveying 7" },
-            { src: "assets/projects/hal/mobile/hal-08.png", label: "Field Surveying 8" },
-            { src: "assets/projects/hal/mobile/hal-09.png", label: "Field Surveying 9" },
-            { src: "assets/projects/hal/mobile/hal-10.png", label: "Field Surveying 10" },
-            { src: "assets/projects/hal/mobile/hal-11.png", label: "Field Surveying 11" },
-            { src: "assets/projects/hal/mobile/hal-12.png", label: "Field Surveying 12" },
-            { src: "assets/projects/hal/mobile/hal-13.png", label: "Field Surveying 13" },
-            { src: "assets/projects/hal/mobile/hal-14.png", label: "Field Surveying 14" },
-            { src: "assets/projects/hal/mobile/hal-15.png", label: "Field Surveying 15" },
-            { src: "assets/projects/hal/mobile/hal-16.png", label: "Field Surveying 16" },
-            { src: "assets/projects/hal/mobile/hal-17.png", label: "Field Surveying 17" },
-            { src: "assets/projects/hal/mobile/hal-18.png", label: "Field Surveying 18" },
-            { src: "assets/projects/hal/mobile/hal-31.png", label: "Field Surveying 31" },
-            { src: "assets/projects/hal/mobile/hal-33.jpg", label: "Field Surveying 33" },
-            { src: "assets/projects/hal/mobile/hal-32.png", label: "Field Surveying 32" },
-            { src: "assets/projects/hal/mobile/hal-34.jpg", label: "Field Surveying 34" },
-            { src: "assets/projects/hal/mobile/hal-35.jpg", label: "Field Surveying 35" },
-            { src: "assets/projects/hal/mobile/hal-36.jpg", label: "Field Surveying 36" },
-            { src: "assets/projects/hal/mobile/hal-37.jpg", label: "Field Surveying 37" },
-            { src: "assets/projects/hal/mobile/hal-38.jpg", label: "Field Surveying 38" },
-            { src: "assets/projects/hal/mobile/hal-39.jpg", label: "Field Surveying 39" },
-            { src: "assets/projects/hal/mobile/hal-40.jpg", label: "Field Surveying 40" },
-            { src: "assets/projects/hal/mobile/hal-41.jpg", label: "Field Surveying 41" },
-            { src: "assets/projects/hal/mobile/hal-42.jpg", label: "Field Surveying 42" },
-            { src: "assets/projects/hal/mobile/hal-43.jpg", label: "Field Surveying 43" },
-            { src: "assets/projects/hal/mobile/hal-19.png", label: "Field Surveying 19" },
-            { src: "assets/projects/hal/mobile/hal-20.png", label: "Field Surveying 20" },
-            { src: "assets/projects/hal/mobile/hal-21.png", label: "Field Surveying 21" },
-            { src: "assets/projects/hal/mobile/hal-22.png", label: "Field Surveying 22" },
-            { src: "assets/projects/hal/mobile/hal-23.png", label: "Field Surveying 23" },
-            { src: "assets/projects/hal/mobile/hal-24.png", label: "Field Surveying 24" },
-            { src: "assets/projects/hal/mobile/hal-25.png", label: "Field Surveying 25" },
-            { src: "assets/projects/hal/mobile/hal-26.png", label: "Field Surveying 26" },
-            { src: "assets/projects/hal/mobile/hal-27.png", label: "Field Surveying 27" },
-            { src: "assets/projects/hal/mobile/hal-28.png", label: "Field Surveying 28" },
-            { src: "assets/projects/hal/mobile/hal-29.png", label: "Field Surveying 29" },
-            { src: "assets/projects/hal/mobile/hal-30.png", label: "Field Surveying 30" }
+            ...Array.from({ length: 32 }, (_, i) => ({
+              src: `assets/projects/hal/mobile/hal-${String(i + 1).padStart(2, "0")}.png`,
+              label: `Field Surveying ${i + 1}`
+            })),
+            ...Array.from({ length: 11 }, (_, i) => ({
+              src: `assets/projects/hal/mobile/hal-${i + 33}.jpg`,
+              label: `Field Surveying ${i + 33}`
+            })),
+            ...Array.from({ length: 31 }, (_, i) => ({
+              src: `assets/projects/hal/mobile/hal-${i + 45}.jpg`,
+              label: `Field Surveying ${i + 45}`
+            })),
+            ...[
+              [2543, 2569], [2571, 2572], [2574, 2574], [2577, 2592],
+              [2593, 2601], [2603, 2609], [2611, 2622], [2623, 2683],
+              [2738, 2743], [2745, 2746], [2747, 2799], [2800, 2802],
+              [2803, 2819], [2821, 2822]
+            ].flatMap(([start, end]) => Array.from({ length: end - start + 1 }, (_, i) => `IMG_${start + i}.PNG`))
+              .map((fileName) => ({
+                src: `assets/projects/hal/mobile/${fileName}`,
+                label: fileName.replace(".PNG", "")
+              }))
           ]
         },
         web: {
