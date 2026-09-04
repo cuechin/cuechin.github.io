@@ -612,6 +612,24 @@
       padding: 16px 24px;
       border-bottom: 1px solid var(--border);
       flex-shrink: 0;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .lightbox-tabs {
+      display: flex; gap: 8px;
+    }
+    .tab-btn {
+      padding: 6px 16px; border-radius: 8px;
+      background: transparent; border: 1px solid var(--border);
+      color: var(--muted); font-size: 0.85rem; font-weight: 600;
+      cursor: pointer; transition: all var(--transition);
+    }
+    .tab-btn.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff;
+    }
+    .tab-btn:hover:not(.active) {
+      border-color: var(--accent); color: var(--accent);
     }
     .lightbox-header h3 {
       font-size: 1.1rem; font-weight: 700;
@@ -709,6 +727,8 @@
       .gallery-preview { grid-template-columns: repeat(2, 1fr); height: 180px; }
       .lightbox-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
       .lightbox-body { padding: 16px; }
+      .lightbox-header { flex-direction: column; align-items: flex-start; }
+      .lightbox-tabs { width: 100%; }
     }
 
     /* ── Reduced motion ── */
@@ -740,7 +760,7 @@
     <div class="container">
       <a href="#" class="logo">andres<span class="gradient-text">mora</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="assets/CV_MoraAndres.pdf" download="Andres_Mora_CV.pdf">CV</a></li>
+        <li><a href="assets/CvMoraAndres.pdf" download="CvMoraAndres.pdf">CV</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -760,7 +780,7 @@
         <p>A developer who builds modern, performant applications and loves turning ideas into real products.</p>
         <div class="btn-group">
           <a href="#projects" class="btn btn-primary">View Projects &darr;</a>
-          <a href="assets/CV_MoraAndres.pdf" class="btn btn-outline" download="Andres_Mora_CV.pdf">Download CV</a>
+          <a href="assets/CvMoraAndres.pdf" class="btn btn-outline" download="CvMoraAndres.pdf">Download CV</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
@@ -781,6 +801,57 @@
       <div class="section-divider reveal"></div>
 
       <div class="projects-grid">
+
+        <!-- HAL -->
+        <div class="project-card reveal">
+          <div class="gallery-preview" onclick="openGallery('hal')">
+            <img src="assets/projects/hal/mobile/hal-01.png" alt="HAL Field Surveying 1" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-02.png" alt="HAL Field Surveying 2" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-03.png" alt="HAL Field Surveying 3" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-04.png" alt="HAL Field Surveying 4" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-05.png" alt="HAL Field Surveying 5" loading="lazy">
+            <img src="assets/projects/hal/mobile/hal-06.png" alt="HAL Field Surveying 6" loading="lazy">
+            <div class="gallery-overlay">View all 301 screenshots &rarr;</div>
+          </div>
+          <div class="project-body">
+            <h3>HAL</h3>
+            <p>iOS field-surveying app built from scratch for subsurface utility mapping, fusing ARKit/LiDAR depth with RTK GNSS positioning. Reduces field capture time and improves as-built positional accuracy to centimeter-level precision, cutting rework and utility-strike risk in excavation planning.</p>
+            <div class="project-tags">
+              <span class="tag">iOS</span>
+              <span class="tag">ARKit</span>
+              <span class="tag">LiDAR</span>
+              <span class="tag">RTK GNSS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" onclick="event.preventDefault(); openGallery('hal')">View Gallery</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Easy Newz -->
+        <div class="project-card reveal">
+          <div class="gallery-preview" onclick="openGallery('easyNewz')">
+            <img src="assets/projects/easy-newz/home.jpg" alt="Easy Newz Screenshot 1" loading="lazy">
+            <img src="assets/projects/easy-newz/news_feed.jpg" alt="Easy Newz Screenshot 2" loading="lazy">
+            <img src="assets/projects/easy-newz/article_view.jpg" alt="Easy Newz Screenshot 3" loading="lazy">
+            <img src="assets/projects/easy-newz/article_detail.jpg" alt="Easy Newz Screenshot 4" loading="lazy">
+            <img src="assets/projects/easy-newz/categories.jpg" alt="Easy Newz Screenshot 5" loading="lazy">
+            <img src="assets/projects/easy-newz/farmer_content.jpg" alt="Easy Newz Screenshot 6" loading="lazy">
+            <div class="gallery-overlay">View all 11 screenshots &rarr;</div>
+          </div>
+          <div class="project-body">
+            <h3>Easy Newz</h3>
+            <p>News platform for farmers on Android and iOS, enhanced with new features and Firebase integrations to improve the product experience and keep article content in sync with the mobile app.</p>
+            <div class="project-tags">
+              <span class="tag">Android</span>
+              <span class="tag">iOS</span>
+              <span class="tag">Firebase</span>
+            </div>
+            <div class="project-links">
+              <a href="#" onclick="event.preventDefault(); openGallery('easyNewz')">View Gallery</a>
+            </div>
+          </div>
+        </div>
 
         <!-- ION -->
         <div class="project-card reveal">
@@ -803,6 +874,33 @@
             </div>
             <div class="project-links">
               <a href="#" onclick="event.preventDefault(); openGallery('ion')">View Gallery</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kiosko Moneycenter -->
+        <div class="project-card reveal">
+          <div class="gallery-preview" onclick="openGallery('kiosko')">
+            <img src="assets/projects/kiosko/menu.png" alt="Kiosko Menu" loading="lazy">
+            <img src="assets/projects/kiosko/login.png" alt="Kiosko Login" loading="lazy">
+            <img src="assets/projects/kiosko/bienvenido.png" alt="Kiosko Bienvenido" loading="lazy">
+            <img src="assets/projects/kiosko/envio1.png" alt="Kiosko Envio Remesa Paso 1" loading="lazy">
+            <img src="assets/projects/kiosko/envio2.png" alt="Kiosko Envio Remesa Paso 2" loading="lazy">
+            <img src="assets/projects/kiosko/configuracion.png" alt="Kiosko Configuracion" loading="lazy">
+            <img src="assets/projects/kiosko/cobro3.png" alt="Kiosko Cobro Remesas" loading="lazy">
+            <img src="assets/projects/kiosko/elo_with_toshiba.png" alt="Kiosko Elo with Toshiba" loading="lazy">
+            <div class="gallery-overlay">View all 28 screenshots &rarr;</div>
+          </div>
+          <div class="project-body">
+            <h3>Walmart Moneycenter kiosk</h3>
+            <p>Self-service kiosk experience for remittances and bill payments at Walmart stores across Central America, including registration, checkout flows, service provider selection, and email/ticket notifications.</p>
+            <div class="project-tags">
+              <span class="tag">Android</span>
+              <span class="tag">Kiosk</span>
+              <span class="tag">Payments</span>
+            </div>
+            <div class="project-links">
+              <a href="#" onclick="event.preventDefault(); openGallery('kiosko')">View Gallery</a>
             </div>
           </div>
         </div>
@@ -830,32 +928,7 @@
               <a href="#" onclick="event.preventDefault(); openGallery('bilco')">View Gallery</a>
             </div>
           </div>
-        </div>
-
-        <!-- Easy Newz -->
-        <div class="project-card reveal">
-          <div class="gallery-preview" onclick="openGallery('easyNewz')">
-            <img src="assets/projects/easy-newz/photo_1_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 1" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_2_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 2" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_3_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 3" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_4_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 4" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_5_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 5" loading="lazy">
-            <img src="assets/projects/easy-newz/photo_6_2026-03-16_19-41-57.jpg" alt="Easy Newz Screenshot 6" loading="lazy">
-            <div class="gallery-overlay">View all 11 screenshots &rarr;</div>
-          </div>
-          <div class="project-body">
-            <h3>Easy Newz</h3>
-            <p>News platform for farmers on Android and iOS, enhanced with new features and Firebase integrations to improve the product experience and keep article content in sync with the mobile app.</p>
-            <div class="project-tags">
-              <span class="tag">Android</span>
-              <span class="tag">iOS</span>
-              <span class="tag">Firebase</span>
-            </div>
-            <div class="project-links">
-              <a href="#" onclick="event.preventDefault(); openGallery('easyNewz')">View Gallery</a>
-            </div>
-          </div>
-        </div>
+        </div> 
 
         <!-- ★ Add more project cards by copying the block above ★ -->
 
@@ -959,6 +1032,39 @@
     <div class="lightbox-body">
       <div class="lightbox-grid" id="easyNewzGalleryGrid">
         <!-- Images injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Kiosko Gallery Lightbox -->
+  <div class="lightbox" id="kioskoLightbox">
+    <div class="lightbox-header">
+      <h3>Kiosko Moneycenter — <span class="gradient-text">Screenshots</span></h3>
+      <button class="lightbox-close" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-grid" id="kioskoGalleryGrid">
+        <!-- Images injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- HAL Gallery Lightbox -->
+  <div class="lightbox" id="halLightbox">
+    <div class="lightbox-header">
+      <h3>HAL — <span class="gradient-text">Screenshots</span></h3>
+      <div class="lightbox-tabs">
+        <button class="tab-btn active" onclick="switchHalTab('mobile')">Mobile</button>
+        <button class="tab-btn" onclick="switchHalTab('web')">Web</button>
+      </div>
+      <button class="lightbox-close" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-grid" id="halGalleryGridMobile">
+        <!-- Mobile images injected by JS -->
+      </div>
+      <div class="lightbox-grid" id="halGalleryGridWeb" style="display:none;">
+        <!-- Web images injected by JS -->
       </div>
     </div>
   </div>
@@ -1105,27 +1211,124 @@
         lightboxId: "easyNewzLightbox",
         gridId: "easyNewzGalleryGrid",
         images: [
-          { src: "assets/projects/easy-newz/photo_1_2026-03-16_19-41-57.jpg", label: "Home" },
-          { src: "assets/projects/easy-newz/photo_2_2026-03-16_19-41-57.jpg", label: "News Feed" },
-          { src: "assets/projects/easy-newz/photo_3_2026-03-16_19-41-57.jpg", label: "Article View" },
-          { src: "assets/projects/easy-newz/photo_4_2026-03-16_19-41-57.jpg", label: "Article Detail" },
-          { src: "assets/projects/easy-newz/photo_5_2026-03-16_19-41-57.jpg", label: "Categories" },
-          { src: "assets/projects/easy-newz/photo_6_2026-03-16_19-41-57.jpg", label: "Farmer Content" },
-          { src: "assets/projects/easy-newz/photo_7_2026-03-16_19-41-57.jpg", label: "Saved Content" },
-          { src: "assets/projects/easy-newz/photo_8_2026-03-16_19-41-57.jpg", label: "Notifications" },
-          { src: "assets/projects/easy-newz/photo_9_2026-03-16_19-41-57.jpg", label: "Profile" },
-          { src: "assets/projects/easy-newz/photo_10_2026-03-16_19-41-57.jpg", label: "Settings" },
-          { src: "assets/projects/easy-newz/photo_11_2026-03-16_19-41-57.jpg", label: "More Content" }
+          { src: "assets/projects/easy-newz/easy_newz_splash.jpg", label: "Splash" },
+          { src: "assets/projects/easy-newz/home.jpg", label: "Home" },
+          { src: "assets/projects/easy-newz/news_feed.jpg", label: "News Feed" },
+          { src: "assets/projects/easy-newz/article_view.jpg", label: "Article View" },
+          { src: "assets/projects/easy-newz/article_detail.jpg", label: "Article Detail" },
+          { src: "assets/projects/easy-newz/categories.jpg", label: "Categories" },
+          { src: "assets/projects/easy-newz/farmer_content.jpg", label: "Farmer Content" },
+          { src: "assets/projects/easy-newz/saved_content.jpg", label: "Saved Content" },
+          { src: "assets/projects/easy-newz/notifications.jpg", label: "Notifications" },
+          { src: "assets/projects/easy-newz/profile.jpg", label: "Profile" },
+          { src: "assets/projects/easy-newz/settings.jpg", label: "Settings" }
         ]
+      },
+      kiosko: {
+        lightboxId: "kioskoLightbox",
+        gridId: "kioskoGalleryGrid",
+        images: [
+          { src: "assets/projects/kiosko/bienvenido.png", label: "Bienvenido" },
+          { src: "assets/projects/kiosko/aviso_privacidad.png", label: "Aviso Privacidad" },
+          { src: "assets/projects/kiosko/configuracion.png", label: "Configuracion" },
+          { src: "assets/projects/kiosko/login.png", label: "Login" },
+          { src: "assets/projects/kiosko/registro.png", label: "Registro" },
+          { src: "assets/projects/kiosko/registro_exitoso.png", label: "Registro Exitoso" },
+          { src: "assets/projects/kiosko/menu.png", label: "Menu" },
+          { src: "assets/projects/kiosko/menu_remesas.png", label: "Menu Remesas" },
+          { src: "assets/projects/kiosko/envio1.png", label: "Envio Paso 1" },
+          { src: "assets/projects/kiosko/envio2.png", label: "Envio Paso 2" },
+          { src: "assets/projects/kiosko/envio3.png", label: "Envio Paso 3" },
+          { src: "assets/projects/kiosko/correo_envio.png", label: "Correo Envio" },
+          { src: "assets/projects/kiosko/cobro1.png", label: "Cobro Paso 1" },
+          { src: "assets/projects/kiosko/cobro2.png", label: "Cobro Paso 2" },
+          { src: "assets/projects/kiosko/cobro3.png", label: "Cobro Paso 3" },
+          { src: "assets/projects/kiosko/enviar_correo.png", label: "Enviar Correo" },
+          { src: "assets/projects/kiosko/correo_pago.png", label: "Correo Pago" },
+          { src: "assets/projects/kiosko/menu_servicios.png", label: "Menu Servicios" },
+          { src: "assets/projects/kiosko/proveedores_servicios_recargas.png", label: "Proveedores Servicios Recargas" },
+          { src: "assets/projects/kiosko/recarga_kolbi.png", label: "Recarga Kolbi" },
+          { src: "assets/projects/kiosko/proveedores_servicios_publicos.png", label: "Proveedores Servicios Publicos" },
+          { src: "assets/projects/kiosko/consultar_servicio.png", label: "Consultar Servicio" },
+          { src: "assets/projects/kiosko/carrito.png", label: "Carrito" },
+          { src: "assets/projects/kiosko/notificacion_envio_codigo_barras.png", label: "Notificacion Envio Codigo Barras" },
+          { src: "assets/projects/kiosko/city-required.png", label: "Validacion Ciudad" },
+          { src: "assets/projects/kiosko/contador.png", label: "Contador Sesion" },
+          { src: "assets/projects/kiosko/reversa%20remesa.jpg", label: "Reversa Remesa" },
+          { src: "assets/projects/kiosko/elo_with_toshiba.png", label: "Elo with Toshiba" },
+          { src: "assets/projects/kiosko/tiquete1.png", label: "Tiquete" }
+        ]
+      },
+      hal: {
+        lightboxId: "halLightbox",
+        mobile: {
+          gridId: "halGalleryGridMobile",
+          images: [
+            ...Array.from({ length: 32 }, (_, i) => ({
+              src: `assets/projects/hal/mobile/hal-${String(i + 1).padStart(2, "0")}.png`,
+              label: `Field Surveying ${i + 1}`
+            })),
+            ...Array.from({ length: 11 }, (_, i) => ({
+              src: `assets/projects/hal/mobile/hal-${i + 33}.jpg`,
+              label: `Field Surveying ${i + 33}`
+            })),
+            ...Array.from({ length: 31 }, (_, i) => ({
+              src: `assets/projects/hal/mobile/hal-${i + 45}.jpg`,
+              label: `Field Surveying ${i + 45}`
+            })),
+            ...[
+              [2543, 2569], [2571, 2572], [2574, 2574], [2577, 2592],
+              [2593, 2601], [2603, 2609], [2611, 2622], [2623, 2683],
+              [2738, 2743], [2745, 2746], [2747, 2799], [2800, 2802],
+              [2803, 2819], [2821, 2822]
+            ].flatMap(([start, end]) => Array.from({ length: end - start + 1 }, (_, i) => `IMG_${start + i}.PNG`))
+              .map((fileName) => ({
+                src: `assets/projects/hal/mobile/${fileName}`,
+                label: fileName.replace(".PNG", "")
+              }))
+          ]
+        },
+        web: {
+          gridId: "halGalleryGridWeb",
+          images: [
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-2026-04-21-23_11_15.png", label: "Dashboard" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-project-2026-04-22-21_38_21.png", label: "Project View" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-subscriptions-2026-04-22-21_26_19.png", label: "Subscriptions" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-subscriptions-steps-2026-04-22-21_32_29.png", label: "Subscription Steps" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-login-2026-04-22-21_34_38.png", label: "Login" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-support-help-2026-04-22-21_33_34.png", label: "Support" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-settings-2026-04-22-21_40_21.png", label: "Settings" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-forgot-password-2026-04-22-21_35_51.png", label: "Forgot Password" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-reset-password-2026-04-22-21_36_36.png", label: "Reset Password" },
+            { src: "assets/projects/hal/web/screencapture-halassetlocator-terms-and-conditions-2026-04-21-23_13_51.png", label: "Terms & Conditions" }
+          ]
+        }
       }
     };
 
     let currentGalleryKey = null;
     let currentViewerIndex = 0;
+    let halCurrentTab = "mobile";
 
-    Object.values(galleries).forEach((gallery) => {
-      const grid = document.getElementById(gallery.gridId);
-      gallery.images.forEach((img, i) => {
+    function populateGallery(galleryKey) {
+      const gallery = galleries[galleryKey];
+      if (gallery.mobile && gallery.web) {
+        // HAL project with tabs
+        const mobileTab = gallery.mobile;
+        const webTab = gallery.web;
+        populateGalleryGrid(mobileTab.gridId, mobileTab.images);
+        populateGalleryGrid(webTab.gridId, webTab.images);
+      } else {
+        // Regular project
+        populateGalleryGrid(gallery.gridId, gallery.images);
+      }
+    }
+
+    function populateGalleryGrid(gridId, images) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      grid.innerHTML = "";
+      images.forEach((img, i) => {
         const el = document.createElement("img");
         el.src = img.src;
         el.alt = img.label;
@@ -1133,12 +1336,34 @@
         el.onclick = () => openViewer(i);
         grid.appendChild(el);
       });
+    }
+
+    Object.keys(galleries).forEach((key) => {
+      populateGallery(key);
     });
 
     function openGallery(key) {
       currentGalleryKey = key;
+      if (key === "hal") {
+        halCurrentTab = "mobile";
+        document.querySelectorAll("#halLightbox .tab-btn").forEach((btn, i) => {
+          btn.classList.toggle("active", i === 0);
+        });
+        document.getElementById("halGalleryGridMobile").style.display = "";
+        document.getElementById("halGalleryGridWeb").style.display = "none";
+      }
       document.getElementById(galleries[key].lightboxId).classList.add("open");
       document.body.style.overflow = "hidden";
+    }
+
+    function switchHalTab(tab) {
+      halCurrentTab = tab;
+      document.querySelectorAll("#halLightbox .tab-btn").forEach((btn, i) => {
+        const isActive = (i === 0 && tab === "mobile") || (i === 1 && tab === "web");
+        btn.classList.toggle("active", isActive);
+      });
+      document.getElementById("halGalleryGridMobile").style.display = tab === "mobile" ? "" : "none";
+      document.getElementById("halGalleryGridWeb").style.display = tab === "web" ? "" : "none";
     }
     function closeGallery() {
       if (currentGalleryKey) {
@@ -1155,12 +1380,22 @@
       document.getElementById("imageViewer").classList.remove("open");
     }
     function navigateViewer(dir) {
-      const images = galleries[currentGalleryKey].images;
+      let images;
+      if (currentGalleryKey === "hal") {
+        images = halCurrentTab === "mobile" ? galleries[currentGalleryKey].mobile.images : galleries[currentGalleryKey].web.images;
+      } else {
+        images = galleries[currentGalleryKey].images;
+      }
       currentViewerIndex = (currentViewerIndex + dir + images.length) % images.length;
       updateViewer();
     }
     function updateViewer() {
-      const images = galleries[currentGalleryKey].images;
+      let images;
+      if (currentGalleryKey === "hal") {
+        images = halCurrentTab === "mobile" ? galleries[currentGalleryKey].mobile.images : galleries[currentGalleryKey].web.images;
+      } else {
+        images = galleries[currentGalleryKey].images;
+      }
       const img = images[currentViewerIndex];
       document.getElementById("viewerImg").src = img.src;
       document.getElementById("viewerImg").alt = img.label;
